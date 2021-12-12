@@ -36,7 +36,7 @@ export default function Set(){
             updatedUser.profilePic=filename;
             try{
               
-                await axios.post("https://react-blog-10.herokuapp.com/upload",data);
+                await axios.post("https://blog-app-v10.herokuapp.com/upload",data);
         
         
             }catch(err){

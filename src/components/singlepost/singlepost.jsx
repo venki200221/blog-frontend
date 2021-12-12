@@ -22,7 +22,7 @@ export default function Singlepost(){
 
  useEffect(() => {
   const getpost=async()=>{
-    const res=await  axios.get("/posts/"+path);
+    const res=await  axios.get("https://blog-app-v10.herokuapp.com/posts/"+path);
     console.log(res.data);
     setpost(res.data);
     setTitle(res.data.title);
@@ -37,7 +37,7 @@ export default function Singlepost(){
 
 const handleDelete=async()=>{
 try{
-  await axios.delete(`/posts/${post._id}`,
+  await axios.delete(`https://blog-app-v10.herokuapp.com/posts/${post._id}`,
   {data:{username:user.username}});
   window.location.replace("/");
 }catch(err){}
@@ -45,7 +45,7 @@ try{
 
 const handleUpdate=async()=>{
   try{
-    await axios.put(`/posts/${post._id}`,
+    await axios.put(`https://blog-app-v10.herokuapp.com/posts/${post._id}`,
     {username:user.username,
       title,
       desc
@@ -90,7 +90,7 @@ const handleUpdate=async()=>{
 
           <div className="singlePostinfo">
              <span className="singlePostAuthor">Author:
-             <Link to={`/?user=${post.username}`} style={{textDecoration:"none",color:"inherit"}}>
+             <Link to={`https://blog-app-v10.herokuapp.com/?user=${post.username}`} style={{textDecoration:"none",color:"inherit"}}>
              <b>{post.username}</b>
              </Link>
              </span>
