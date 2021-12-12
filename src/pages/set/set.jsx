@@ -36,7 +36,7 @@ export default function Set(){
             updatedUser.profilePic=filename;
             try{
               
-                await axios.post("https://blog-app-v10.herokuapp.com/upload",data);
+                await axios.post("https://blog-app-v10.herokuapp.com/api/upload",data);
         
         
             }catch(err){
@@ -44,7 +44,7 @@ export default function Set(){
             }
         }
         try{
-      const res=await axios.put("/users/"+user._id,updatedUser);
+      const res=await axios.put("https://blog-app-v10.herokuapp.com/api/users/"+user._id,updatedUser);
         setSucess(true);
         dispatch({type:"UPDATE_SUCCESS",payload:res.data})
     }catch(err){

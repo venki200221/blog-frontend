@@ -28,7 +28,7 @@ if(file){
     newPost.photo=filename;
     try{
       
-        await axios.post("https://blog-app-v10.herokuapp.com/upload",data);
+        await axios.post("https://blog-app-v10.herokuapp.com/api/upload",data);
 
 
     }catch(err){
@@ -36,10 +36,10 @@ if(file){
     }
 }
 try{
-const res=await axios.post("https://blog-app-v10.herokuapp.com/posts,newPost");
-window.location.replace("https://blog-app-v10.herokuapp.com/post/"+res.data._id);
+const res=await axios.post("https://blog-app-v10.herokuapp.com/api/posts,newPost");
+window.location.replace("https://blog-app-v10.herokuapp.com/api/post/"+res.data._id);
 }catch(err){}
-axios.post("https://blog-app-v10.herokuapp.com/posts",newPost);
+axios.post("https://blog-app-v10.herokuapp.com/api/posts",newPost);
 };
 
 
